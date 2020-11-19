@@ -1,0 +1,48 @@
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: max-content;
+  height: 40px;
+  padding: 0 20px;
+  background: $yellow;
+  border-radius: 10px;
+  border: 1px solid $yellow;
+  color: #ffffff;
+  font-size: $font-size-level-2;
+  line-height: 38px;
+  transition: .2s cubic-bezier(0, 0.55, 0.45, 1);
+  transition-property: box-shadow, background-color, border-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $brown-light;
+    border-color: $brown-light;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $yellow-dark;
+    border-color: $yellow-dark;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $gray;
+    border-color: $gray;
+    color: #ffffff;
+    cursor: default;
+  }
+}

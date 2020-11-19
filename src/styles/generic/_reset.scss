@@ -1,0 +1,20 @@
+html {
+  min-width: 1200px;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+}
+
+html *:focus {
+  outline: initial;
+  outline-style: auto;
+}
+
+[tabindex^='-']:focus {
+  outline-style: none;
+}
+
+body {
+  background: $brown-dark;
+  color: #fff;
+  font-size: $font-size-base;
+}
