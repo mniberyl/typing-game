@@ -1,1 +1,72 @@
+.game {
+  display: flex;
+  min-height: 1080px;
+  height: 100vh;
+}
 
+.game-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-heading {
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.game-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__word {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    width: 80%;
+    height: 44px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: solid 3px $yellow;
+    background-color: transparent;
+    text-align: center;
+    font-size: $font-size-level-3;
+    color: #ffffff;
+
+    &:hover,
+    &:focus {
+      border-color: $brown-light;
+      box-shadow: 0 1px 2px 0 rgba(#000, 0.16);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #ffffff;
+    }
+  }
+
+  &__toggle {
+    width: 100px;
+    margin: 0 auto;
+    color: $brown-dark;
+  }
+}
