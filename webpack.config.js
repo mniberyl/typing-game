@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js', './src/styles/index.scss'],
@@ -7,10 +8,13 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    publicPath: "/",
     hot: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -23,16 +27,19 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties',]
+            plugins: [
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-proposal-optional-chaining'
+            ]
           }
         }
       },
       {
         test: /\.scss$/,
         use: [
-          "style-loader", // creates style nodes from JS strings
-          "css-loader",   // translates CSS into CommonJS
-          "sass-loader"   // compiles Sass to CSS, using Node Sass by default
+          "style-loader",
+          "css-loader",
+          "sass-loader"
         ],
         exclude: /node_modules/
       }

@@ -19,6 +19,7 @@ module.exports = {
       ignore: ['^@/'],
     }],
     "import/prefer-default-export": 0,
+    "max-len": 0,
     "no-console": [1, {
       allow: ["warn", "error"],
     }],
